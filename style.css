@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    color: #1C2E5B;
+}
+
+.brand {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;  
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 4.5rem;
+    margin: 50px auto;
+}
+
+.description {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+form {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: rgb(218, 218, 218);
+}
+
+form input {
+    width: 90%;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    cursor: pointer;
+}
+
+form ion-icon {
+    color: #1C2E5B;
+    width: 9%;
+    font-size: 2.5rem;
+    margin: -9px; /*center icon*/
+}
+
+::placeholder {
+    color: #1c2e5b92;
+}
+
+.search-result {
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-gap: 25px;
+    grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.item {
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+    overflow: hidden;
+    border: 1px solid #1C2E5B;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.item img {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.item .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.item .title {
+    width: 100%;
+    color: #1C2E5B;
+    margin: 20px 20px 0 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.view-button {
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+    width: 160px;
+    padding: 10px 32px;
+    background-color: #1C2E5B;
+    color: whitesmoke;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.details {
+    display: grid;
+    grid-template-rows: 40px 50px 50px;
+}
+
+.item-data { 
+    display: grid;
+    grid-row: 1;
+    color: #1C2E5B;
+    display: block;
+    margin-top: 10px;
+    letter-spacing: .05rem;
+    line-height: 2rem;  
+}
+
+.item ion-icon {
+    font-size: 2.5rem;
+    color: rgb(252, 209, 99);
+    margin-bottom: -10px;
+}
+
+.restrictions {
+    margin-top: 8px;
+    padding-left: 6px;
+    display: grid;
+    grid-row: 2;
+}
+
+.container.initial .brand {
+    font-size: 7rem;
+}
+
+.container.initial form {
+    max-width: 800px;
+}
+
+.container.initial form input {
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.container.initial .sushi {
+    width: 100%;
+}
