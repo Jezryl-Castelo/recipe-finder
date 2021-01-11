@@ -92,7 +92,7 @@ form ion-icon {
     border-radius: 8px;
     padding: 15px;
     overflow: hidden;
-    border: 1px solid #1C2E5B;
+    border: 1px solid #3e51829c;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -120,6 +120,7 @@ form ion-icon {
     margin: 0 auto;
     text-decoration: none;
     text-align: center;
+    height: 44px;
     width: 160px;
     padding: 10px 32px;
     background-color: #1C2E5B;
@@ -172,6 +173,7 @@ form ion-icon {
     height: 48px;
 }
 
-.container.initial .sushi {
+.container.initial .foods{
     width: 100%;
+    border-radius: 20px;
 }

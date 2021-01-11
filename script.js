@@ -1,7 +1,7 @@
 const searchForm = document.querySelector('form');
 const searchResultDiv = document.querySelector('.search-result');
 const container = document.querySelector(".container");
-const sushiImage = document.querySelector(".sushi");
+const foodsImage = document.querySelector(".foods");
 let searchQuery = '';
 const APP_ID = "0afafdc7";
 const APP_key = "69cb8af4aa436ea914b9305824fa8871";
@@ -15,6 +15,7 @@ searchIcon.addEventListener('click', submitForm)
 function submitForm() {
     searchQuery = input.value;
     fetchAPI();
+    //console.log(searchQuery);
 }
 
 async function fetchAPI() {
@@ -23,23 +24,21 @@ async function fetchAPI() {
     const data = await response.json();
     generateHTML(data.hits);
     console.log(data);
+    console.log(baseURL);
 }
 
-function generateHTML(results) {
-    container.classList.remove('initial');
-    sushiImage.style.display = "none";
-    let generatedHTML = '';
-    results.map(result => {
-        let spaced = ""
-        result.recipe.healthLabels.map(ingredient => {
-            spaced.trimEnd(',');
+    function generateHTML(results) {
+        container.classList.remove('initial');
+        foodsImage.style.display = "none";
+        let generatedHTML = '';
+        results.map(result => {
+            let spaced = ""
+            result.recipe.healthLabels.map(ingredient => {
             spaced += ingredient + "," + " ";
-            
         })
-        console.log(spaced)
+        
         generatedHTML +=
-        `
-        <div class="item">
+        ` <div class="item">
             <img src="${result.recipe.image}" alt="">
         <div class="flex-container">
             <h1 class="title">${result.recipe.label}</h1>
@@ -47,15 +46,11 @@ function generateHTML(results) {
         <div class="details">
             <p class="item-data">
             <ion-icon name="flame-outline"></ion-icon>
-            ${result.recipe.calories.toFixed(0)}</p>
-            <p class="restrictions">${spaced}</p>
-
+            Calories: ${result.recipe.calories.toFixed(0)}</p>
+            <p class="restrictions">${spaced.slice(0, -2)}</p>
             <a class="view-button" target="_blank" href="${result.recipe.url}">View Recipe</a>
             </div>
         </div> `
     })
     searchResultDiv.innerHTML = generatedHTML;
 }
-
-
-
